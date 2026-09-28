@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Class management</p>
+          <h1>Attendance Tracker</h1>
+        </div>
+        <button id="resetBtn" class="secondary-button" type="button">Reset data</button>
+      </header>
+
+      <main class="layout">
+        <section class="panel add-student-panel">
+          <h2>Add Student</h2>
+          <form id="studentForm" class="student-form">
+            <label>
+              Student name
+              <input id="studentName" type="text" placeholder="e.g. Jane Doe" required />
+            </label>
+            <label>
+              Student ID
+              <input id="studentId" type="text" placeholder="e.g. A-101" required />
+            </label>
+            <button type="submit">Add student</button>
+          </form>
+        </section>
+
+        <section class="panel summary-panel">
+          <h2>Today’s Summary</h2>
+          <div class="stats-grid">
+            <div class="stat-card present">
+              <span class="label">Present</span>
+              <strong id="presentCount">0</strong>
+            </div>
+            <div class="stat-card absent">
+              <span class="label">Absent</span>
+              <strong id="absentCount">0</strong>
+            </div>
+            <div class="stat-card late">
+              <span class="label">Late</span>
+              <strong id="lateCount">0</strong>
+            </div>
+            <div class="stat-card rate">
+              <span class="label">Attendance</span>
+              <strong id="attendanceRate">0%</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel attendance-panel">
+          <div class="attendance-header">
+            <h2>Daily Attendance</h2>
+            <div class="date-row">
+              <label for="attendanceDate">Date</label>
+              <input id="attendanceDate" type="date" />
+            </div>
+          </div>
+
+          <div id="attendanceTableWrap" class="attendance-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Student</th>
+                  <th>ID</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="attendanceTableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="attendance-actions">
+            <button id="saveAttendanceBtn" type="button">Save Attendance</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
